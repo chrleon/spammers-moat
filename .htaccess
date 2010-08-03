@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /moat/
+
+# legg til utf-8
+#AddCharset utf-8 .php .html .css .js .txt
+
+# Email-harvest
+
+# sender epost til valgfritt domene: OBS SPAMUTSENDING
+#RewriteRule contact/([a-zA-Z0-9-_\.]+)/([a-zA-Z0-9-_\.]+)$ email.php?email=$1&domain=$2 
+RewriteRule contact/([a-zA-Z0-9\-_\.]+)/([a-zA-Z0-9\-_\.]+)$ email.php?email=$1&domain=$2 
+# sender eposten kun innen det samme domenet
+RewriteRule contact/([a-zA-Z0-9\-_\.]+)$ email.php?email=$1 
+#RewriteRule contact/([a-zA-Z0-9-_\.]+)$ email.php?email=$1
