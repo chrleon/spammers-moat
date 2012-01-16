@@ -5,10 +5,10 @@ session_start();
 
 <?php
 
-//	Sjekker om det er satt en variabel fra email-skriptet
-//	Om denne varabelen er satt, har email skriptet kjørt
-//	og vi er tilbakeført til denne siden. Dermed skal ikke
-//	statistikken telle med
+//	Checks to see if url-variable in the session is set. 
+//	If this variable is set, the email.php has run and returns the user back to
+//	the originpage. That way the statistics won't be counted twice.	
+
 //	------------------------------------------------------------------
 
 

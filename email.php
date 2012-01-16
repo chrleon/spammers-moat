@@ -1,15 +1,12 @@
 <?php 
+// we include the config-file
+include_once('sm-config');
+
 // we start a session to hold some variables for later use
 session_start();
 
 // set a session variable to check against for statistics
 $_SESSION['url'] = 1;
-
-//	the $domain variable is used for email-addresses on THIS domain
-//	if no domain is entered in the link like contact/abc123
-//	then the email will be sent to 'abc123@3djegrad.net'
-$domain = "3djegrad.net";
-
 
 //	The email-address is gathered from the GET-request
 //	This GET-request is from the link you clicked
@@ -28,7 +25,8 @@ $domain = $_GET['domain'];
 header("Location: mailto:$recipient@$domain");
 
 //	Tells the browser to go back one page in history
-echo '<script type="text/javascript">history.back()</script>';
+//	so that you go back to the page you were at
+	echo '<script type="text/javascript">history.back()</script>';
 
 //	Explanation page for Readers without Javascript
 $explanation = file_get_contents("spamexplain-eng.html");

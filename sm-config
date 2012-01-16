@@ -1,0 +1,11 @@
+<?php
+// Use this file to configure your antispam-script.
+
+//      the $domain variable is used for email-addresses on THIS domain
+//      if no domain is entered in the link like contact/abc123
+//      then the email will be sent to 'abc123@yourdomain.com'
+
+//	You can send emails to any address by linking to email/abc/gmail.com
+$domain = "yourdomain.com";
+
+?>
